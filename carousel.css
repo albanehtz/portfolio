@@ -1,0 +1,57 @@
+/* ══════════════════════════════════════
+   CARROUSEL D'IMAGES — change de photo toutes les 7s (pas de défilement continu)
+   La taille (= la hauteur de la page d'accueil) est gérée par
+   ".hero-stage .carousel" dans style.css. Ce fichier ne s'occupe
+   que de l'intérieur du carrousel (les slides, le défilement, les points).
+══════════════════════════════════════ */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  will-change: transform;
+}
+
+/* la transition n'est activée que pendant le glissement,
+   pas pendant le saut invisible qui boucle la dernière image vers la 1ère */
+.carousel-track.animate {
+  transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* petits points cliquables en bas du carrousel (optionnel) */
+.carousel-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 2;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease;
+}
+.carousel-dot.active {
+  background: #fff;
+}
