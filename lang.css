@@ -1,0 +1,16 @@
+/* lang.css — bouton de langue FR/EN */
+/* Le bouton reprend la classe .nav-contact pour hériter exactement de la
+   même typographie (police, taille, graisse, espacement) que [CV] et
+   (Contact). On ne surcharge ici que ce qui doit changer : la couleur,
+   et les propriétés par défaut d'un <button> (fond, bordure, curseur). */
+.nav-lang {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+  color: #ff0000; /* rouge — ajuste ce code si tu as une teinte de rouge précise dans ta charte */
+}
+
+.nav-lang:hover {
+  opacity: 0.7;
+}
